@@ -1,1201 +1,355 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>
-      Hernandez Custom Embroidery | Custom Boxing Trunks & Ringwear, Glendale AZ
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Hanken+Grotesk:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --ink: #17130e;
-        --ink2: #26201a;
-        --logo: #000000;
-        --gold: #c8a24a;
-        --gold2: #e4c97e;
-        --red: #a8222b;
-        --paper: #eeece7;
-        --line: #d6d2c8;
-        --mut: #6d675c;
-        box-sizing: border-box;
-        padding-top: env(safe-area-inset-top, 0px);
-        padding-bottom: env(safe-area-inset-bottom, 0px);
-        color-scheme: light;
-      }
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 84px;
-      }
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
-      body {
-        margin: 0;
-        background: var(--paper);
-        color: var(--ink);
-        font:
-          400 17px/1.55 "Hanken Grotesk",
-          system-ui,
-          sans-serif;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family:
-          "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
-        margin: 0;
-        line-height: 0.95;
-        letter-spacing: 0.01em;
-      }
-      a {
-        color: inherit;
-      }
-      .wrap {
-        max-width: 1160px;
-        margin: 0 auto;
-        padding: 0 22px;
-      }
-      .bar {
-        background: var(--gold);
-        color: var(--ink);
-        text-align: center;
-        font-weight: 700;
-        font-size: 15px;
-        padding: 9px 14px;
-      }
-      nav {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        background: var(--logo);
-        color: #fff;
-        border-bottom: 1px solid #3a3226;
-      }
-      nav .wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 76px;
-        gap: 14px;
-      }
-      .logo img {
-        height: 64px;
-        width: 64px;
-        display: block;
-      }
-      .logo {
-        font-family: "Big Shoulders Display", sans-serif;
-        font-weight: 800;
-        font-size: 24px;
-        color: var(--gold2);
-        text-decoration: none;
-        line-height: 1;
-      }
-      .logo small {
-        display: block;
-        font:
-          500 11px "Hanken Grotesk",
-          sans-serif;
-        letter-spacing: 0.18em;
-        color: #cfc6b2;
-      }
-      .nav-r {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-        font-size: 15px;
-      }
-      .nav-r a {
-        text-decoration: none;
-      }
-      .btn {
-        display: inline-block;
-        border: 0;
-        cursor: pointer;
-        background: var(--gold);
-        color: var(--ink);
-        font:
-          700 16px "Hanken Grotesk",
-          sans-serif;
-        padding: 14px 26px;
-        border-radius: 3px;
-        text-decoration: none;
-      }
-      .btn:hover {
-        background: var(--gold2);
-      }
-      .btn.red {
-        background: var(--red);
-        color: #fff;
-      }
-      .btn.red:hover {
-        background: #c02a35;
-      }
-      :focus-visible {
-        outline: 3px solid var(--gold2);
-        outline-offset: 2px;
-      }
-      .hero {
-        background: var(--ink);
-        color: #fff;
-        padding: 54px 0 64px;
-      }
-      .hero .wrap {
-        display: grid;
-        grid-template-columns: 1.05fr 1fr;
-        gap: 40px;
-        align-items: center;
-      }
-      .hero h1 {
-        font-size: clamp(52px, 8vw, 100px);
-        font-weight: 900;
-        text-transform: uppercase;
-      }
-      .hero p {
-        color: #d9d1bf;
-        max-width: 46ch;
-        font-size: 18px;
-        margin: 20px 0 26px;
-      }
-      .hero .try {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 700;
-        color: var(--gold2);
-      }
-      .name-in {
-        width: 100%;
-        max-width: 440px;
-        font:
-          800 26px "Big Shoulders Display",
-          sans-serif;
-        letter-spacing: 0.04em;
-        padding: 14px 16px;
-        border: 2px solid var(--gold);
-        background: #0f0c09;
-        color: #fff;
-        border-radius: 3px;
-      }
-      .sw {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin: 14px 0 0;
-        align-items: center;
-      }
-      .sw span {
-        font-size: 14px;
-        color: #cfc6b2;
-        min-width: 64px;
-      }
-      .dot {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        border: 2px solid #fff3;
-        cursor: pointer;
-        padding: 0;
-      }
-      .dot[aria-pressed="true"] {
-        border-color: #fff;
-        box-shadow: 0 0 0 3px var(--gold);
-      }
-      .stage {
-        background: radial-gradient(ellipse at 50% 40%, #3a2f22, #17130e 70%);
-        border: 1px solid #4a3f2f;
-        border-radius: 6px;
-        padding: 20px;
-        text-align: center;
-      }
-      .stage svg {
-        width: 100%;
-        max-width: 460px;
-        height: auto;
-      }
-      .stage small {
-        display: block;
-        color: #bdb39d;
-        font-size: 14px;
-      }
-      .cta-row {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 24px;
-      }
-      .ghost {
-        background: none;
-        border: 2px solid var(--gold);
-        color: var(--gold2);
-      }
-      .ghost:hover {
-        background: #fff1;
-      }
-      section {
-        padding: 72px 0;
-      }
-      h2 {
-        font-size: clamp(38px, 5vw, 60px);
-        font-weight: 800;
-        text-transform: uppercase;
-      }
-      .sub {
-        color: var(--mut);
-        max-width: 58ch;
-        margin: 12px 0 34px;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 18px;
-      }
-      .card {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: 4px;
-        display: flex;
-        flex-direction: column;
-      }
-      .card .art img {
-        width: 100%;
-        aspect-ratio: 4/5;
-        object-fit: cover;
-        display: block;
-        border-radius: 3px 3px 0 0;
-      }
-      .work {
-        background: var(--ink);
-        color: #fff;
-        padding: 56px 0 64px;
-      }
-      .work h2 {
-        color: var(--gold2);
-      }
-      .work .sub {
-        color: #cfc6b2;
-      }
-      .gal {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 8px;
-      }
-      .gal img {
-        width: 100%;
-        aspect-ratio: 4/5;
-        object-fit: cover;
-        display: block;
-        border-radius: 3px;
-      }
-      .work .btn {
-        margin-top: 26px;
-      }
-      @media (max-width: 900px) {
-        .gal {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-      @media (max-width: 520px) {
-        .gal {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      .card .b {
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        flex: 1;
-      }
-      .card h3 {
-        font-size: 28px;
-        font-weight: 800;
-      }
-      .card p {
-        margin: 0;
-        color: var(--mut);
-        font-size: 15px;
-        flex: 1;
-      }
-      .price {
-        font-weight: 700;
-      }
-      .card .btn {
-        margin-top: 10px;
-        padding: 11px 16px;
-        font-size: 15px;
-        text-align: center;
-      }
-      .order {
-        background: #fff;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-      .order .wrap {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 44px;
-      }
-      .f {
-        display: grid;
-        gap: 16px;
-      }
-      .f label {
-        display: grid;
-        gap: 5px;
-        font-weight: 700;
-        font-size: 15px;
-      }
-      .f input,
-      .f select,
-      .f textarea {
-        font:
-          500 16px "Hanken Grotesk",
-          sans-serif;
-        padding: 12px 14px;
-        border: 1.5px solid #bdb8ab;
-        border-radius: 4px;
-        background: #fff;
-        color: var(--ink);
-        width: 100%;
-        transition:
-          border-color 0.15s,
-          box-shadow 0.15s;
-      }
-      .f input:not([type="checkbox"]),
-      .f select {
-        height: 52px;
-      }
-      .f select {
-        -webkit-appearance: none;
-        appearance: none;
-        cursor: pointer;
-        padding-right: 46px;
-        border-color: var(--ink);
-        background: #fff
-          url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1.5l6 6 6-6' fill='none' stroke='%23a8222b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>")
-          no-repeat right 16px center/14px 9px;
-      }
-      .f select option {
-        font:
-          500 16px "Hanken Grotesk",
-          sans-serif;
-        color: var(--ink);
-        background: #fff;
-      }
-      .f input:hover,
-      .f select:hover,
-      .f textarea:hover {
-        border-color: var(--gold);
-      }
-      .f input:focus,
-      .f select:focus,
-      .f textarea:focus {
-        outline: 0;
-        border-color: var(--gold);
-        box-shadow: 0 0 0 4px rgba(200, 162, 74, 0.3);
-      }
-      .f input::placeholder,
-      .f textarea::placeholder {
-        color: #9a9486;
-        font-weight: 400;
-      }
-      .f input[type="checkbox"] {
-        accent-color: var(--red);
-      }
-      .two {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-      }
-      .chk {
-        display: flex !important;
-        grid-template-columns: none;
-        gap: 10px;
-        align-items: center;
-        font-weight: 500 !important;
-      }
-      .chk input {
-        width: 20px;
-        height: 20px;
-        flex: none;
-      }
-      .total {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        border-top: 2px solid var(--ink);
-        padding-top: 12px;
-        font-weight: 700;
-      }
-      .total b {
-        font:
-          800 40px "Big Shoulders Display",
-          sans-serif;
-      }
-      .note {
-        font-size: 14px;
-        color: var(--mut);
-        margin: 0;
-      }
-      .dots {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-      }
-      .dots .dot {
-        border-color: #0003;
-      }
-      .dots .dot[aria-pressed="true"] {
-        border-color: #fff;
-        box-shadow: 0 0 0 3px var(--ink);
-      }
-      #done {
-        display: none;
-        background: var(--ink);
-        color: #fff;
-        padding: 22px;
-        border-radius: 4px;
-        border-left: 6px solid var(--gold);
-      }
-      #done h3 {
-        font-size: 34px;
-        color: var(--gold2);
-        margin-bottom: 8px;
-      }
-      .steps {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-        border-top: 3px solid var(--ink);
-        counter-reset: s;
-      }
-      .steps div {
-        padding: 20px 18px 0 0;
-        counter-increment: s;
-      }
-      .steps h3 {
-        font-size: 30px;
-      }
-      .steps h3:before {
-        content: counter(s) ". ";
-      }
-      .steps p {
-        margin: 8px 0 0;
-        color: var(--mut);
-        font-size: 15px;
-      }
-      .svc {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-      }
-      .svc h3 {
-        font-size: 30px;
-        margin-bottom: 6px;
-      }
-      .svc p {
-        margin: 0;
-        color: var(--mut);
-      }
-      .pitch {
-        background: var(--ink);
-        color: #fff;
-      }
-      .pitch h2 {
-        color: var(--gold2);
-      }
-      .pitch .sub {
-        color: #cfc6b2;
-      }
-      .pitch ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px 40px;
-      }
-      .pitch li {
-        border-left: 3px solid var(--gold);
-        padding-left: 16px;
-      }
-      .pitch li b {
-        display: block;
-        font:
-          800 26px "Big Shoulders Display",
-          sans-serif;
-        letter-spacing: 0.02em;
-        color: #fff;
-      }
-      .pitch li span {
-        color: #cfc6b2;
-        font-size: 15px;
-      }
-      .contact {
-        background: var(--gold);
-        color: var(--ink);
-        text-align: center;
-      }
-      .contact h2 {
-        font-size: clamp(40px, 6vw, 76px);
-      }
-      .contact p {
-        margin: 12px auto 24px;
-        max-width: 50ch;
-      }
-      .contact .btn {
-        background: var(--ink);
-        color: var(--gold2);
-      }
-      footer {
-        background: var(--ink);
-        color: #bdb39d;
-        font-size: 14px;
-        padding: 26px 0;
-      }
-      footer .wrap {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      @media (max-width: 900px) {
-        .hero .wrap,
-        .order .wrap {
-          grid-template-columns: 1fr;
-        }
-        .grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .steps {
-          grid-template-columns: 1fr 1fr;
-        }
-        .svc,
-        .pitch ul {
-          grid-template-columns: 1fr;
-        }
-        .nav-r .hide {
-          display: none;
-        }
-      }
-      @media (max-width: 520px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-        .two {
-          grid-template-columns: 1fr;
-        }
-        .steps {
-          grid-template-columns: 1fr;
-        }
-        section {
-          padding: 52px 0;
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="bar">
-      Now booking December &amp; January orders. November is fully booked.
-    </div>
-    <nav>
-      <div class="wrap">
-        <a class="logo" href="#top"
-          ><img src="images/logo.png" alt="Hernandez Custom Embroidery"
-        /></a>
-        <div class="nav-r">
-          <a class="hide" href="#shop">Shop</a
-          ><a class="hide" href="#how">How it works</a
-          ><a class="hide" href="tel:+16269913086">626-991-3086</a
-          ><a
-            class="btn"
-            href="#order"
-            style="padding: 10px 18px; font-size: 15px"
-            >Start my order</a
-          >
-        </div>
-      </div>
-    </nav>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hernandez Custom Embroidery | Custom Boxing Trunks & Ringwear, Glendale AZ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17130e;--ink2:#26201a;--logo:#000000;--gold:#c8a24a;--gold2:#e4c97e;--red:#a8222b;--paper:#eeece7;--line:#d6d2c8;--mut:#6d675c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 'Hanken Grotesk',system-ui,sans-serif}
+h1,h2,h3{font-family:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;margin:0;line-height:.95;letter-spacing:.01em}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+.bar{background:var(--gold);color:var(--ink);text-align:center;font-weight:700;font-size:15px;padding:9px 14px}
+nav{position:sticky;top:0;z-index:5;background:var(--logo);color:#fff;border-bottom:1px solid #3a3226}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:14px}
+.logo img{height:64px;width:64px;display:block}.logo{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:24px;color:var(--gold2);text-decoration:none;line-height:1}
+.logo small{display:block;font:500 11px 'Hanken Grotesk',sans-serif;letter-spacing:.18em;color:#cfc6b2}
+.nav-r{display:flex;align-items:center;gap:18px;font-size:15px}
+.nav-r a{text-decoration:none}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--gold);color:var(--ink);font:700 16px 'Hanken Grotesk',sans-serif;padding:14px 26px;border-radius:3px;text-decoration:none}
+.btn:hover{background:var(--gold2)}
+.btn.red{background:var(--red);color:#fff}.btn.red:hover{background:#c02a35}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+.hero{background:var(--ink);color:#fff;padding:54px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(52px,8vw,100px);font-weight:900;text-transform:uppercase}
+.hero p{color:#d9d1bf;max-width:46ch;font-size:18px;margin:20px 0 26px}
+.hero .try{display:block;margin-bottom:8px;font-weight:700;color:var(--gold2)}
+.name-in{width:100%;max-width:440px;font:800 26px 'Big Shoulders Display',sans-serif;letter-spacing:.04em;padding:14px 16px;border:2px solid var(--gold);background:#0f0c09;color:#fff;border-radius:3px}
+.sw{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0;align-items:center}
+.sw span{font-size:14px;color:#cfc6b2;min-width:64px}
+.dot{width:34px;height:34px;border-radius:50%;border:2px solid #fff3;cursor:pointer;padding:0}
+.dot[aria-pressed=true]{border-color:#fff;box-shadow:0 0 0 3px var(--gold)}
+.stage{background:radial-gradient(ellipse at 50% 40%,#3a2f22,#17130e 70%);border:1px solid #4a3f2f;border-radius:6px;padding:20px;text-align:center}
+.stage svg{width:100%;max-width:460px;height:auto}
+.stage small{display:block;color:#bdb39d;font-size:14px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.ghost{background:none;border:2px solid var(--gold);color:var(--gold2)}.ghost:hover{background:#fff1}
+section{padding:72px 0}
+h2{font-size:clamp(38px,5vw,60px);font-weight:800;text-transform:uppercase}
+.sub{color:var(--mut);max-width:58ch;margin:12px 0 34px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column}
+.card .art img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:3px 3px 0 0}
+.work{background:var(--ink);color:#fff;padding:56px 0 64px}.work h2{color:var(--gold2)}.work .sub{color:#cfc6b2}.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.gal img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:3px}.work .btn{margin-top:26px}@media(max-width:900px){.gal{grid-template-columns:repeat(3,1fr)}}@media(max-width:520px){.gal{grid-template-columns:repeat(2,1fr)}}
+.card .b{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:28px;font-weight:800}
+.card p{margin:0;color:var(--mut);font-size:15px;flex:1}
+.price{font-weight:700}
+.card .btn{margin-top:10px;padding:11px 16px;font-size:15px;text-align:center}
+.order{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.order .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.f{display:grid;gap:16px}
+.f label{display:grid;gap:5px;font-weight:700;font-size:15px}
+.f input,.f select,.f textarea{font:500 16px 'Hanken Grotesk',sans-serif;padding:12px 14px;border:1.5px solid #bdb8ab;border-radius:4px;background:#fff;color:var(--ink);width:100%;transition:border-color .15s,box-shadow .15s}
+.f input:not([type=checkbox]),.f select{height:52px}
+.f select{-webkit-appearance:none;appearance:none;cursor:pointer;padding-right:46px;border-color:var(--ink);background:#fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1.5l6 6 6-6' fill='none' stroke='%23a8222b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat right 16px center/14px 9px}
+.f select option{font:500 16px 'Hanken Grotesk',sans-serif;color:var(--ink);background:#fff}
+.f input:hover,.f select:hover,.f textarea:hover{border-color:var(--gold)}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 4px rgba(200,162,74,.3)}
+.f input::placeholder,.f textarea::placeholder{color:#9a9486;font-weight:400}
+.f input[type=checkbox]{accent-color:var(--red)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chk{display:flex!important;grid-template-columns:none;gap:10px;align-items:center;font-weight:500!important}
+.chk input{width:20px;height:20px;flex:none}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--ink);padding-top:12px;font-weight:700}
+.total b{font:800 40px 'Big Shoulders Display',sans-serif}
+.note{font-size:14px;color:var(--mut);margin:0}
+.dots{display:flex;gap:10px;align-items:center}
+.dots .dot{border-color:#0003}.dots .dot[aria-pressed=true]{border-color:#fff;box-shadow:0 0 0 3px var(--ink)}
+#done{display:none;background:var(--ink);color:#fff;padding:22px;border-radius:4px;border-left:6px solid var(--gold)}
+#done h3{font-size:34px;color:var(--gold2);margin-bottom:8px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--ink);counter-reset:s}
+.steps div{padding:20px 18px 0 0;counter-increment:s}
+.steps h3{font-size:30px}
+.steps h3:before{content:counter(s) ". "}
+.steps p{margin:8px 0 0;color:var(--mut);font-size:15px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.svc h3{font-size:30px;margin-bottom:6px}.svc p{margin:0;color:var(--mut)}
+.pitch{background:var(--ink);color:#fff}
+.pitch h2{color:var(--gold2)}
+.pitch .sub{color:#cfc6b2}
+.pitch ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 40px}
+.pitch li{border-left:3px solid var(--gold);padding-left:16px}
+.pitch li b{display:block;font:800 26px 'Big Shoulders Display',sans-serif;letter-spacing:.02em;color:#fff}
+.pitch li span{color:#cfc6b2;font-size:15px}
+.contact{background:var(--gold);color:var(--ink);text-align:center}
+.contact h2{font-size:clamp(40px,6vw,76px)}
+.contact p{margin:12px auto 24px;max-width:50ch}
+.contact .btn{background:var(--ink);color:var(--gold2)}
+footer{background:var(--ink);color:#bdb39d;font-size:14px;padding:26px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){.hero .wrap,.order .wrap{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.svc,.pitch ul{grid-template-columns:1fr}.nav-r .hide{display:none}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}.steps{grid-template-columns:1fr}section{padding:52px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.gl{font-weight:700;font-size:15px;margin-bottom:-6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--ink);background:#fff;color:var(--ink);padding:10px 14px;border-radius:4px;font:700 14px 'Hanken Grotesk',sans-serif;cursor:pointer}
+.chip:hover{border-color:var(--gold)}.chip[aria-pressed=true]{background:var(--ink);color:var(--gold2)}
+.f .drop{display:block;border:2px dashed var(--gold);background:#fffdf6;padding:20px;text-align:center;border-radius:4px;cursor:pointer;font-weight:700}
+.f .drop input{display:none}.drop small{display:block;font-weight:400;color:var(--mut);margin-top:4px}
+.qt{width:100%;border-collapse:collapse;font-size:15px}.qt td,.qt th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}.qt tr.on{background:#f6e9c4;font-weight:700}
+.pt,.dg{padding:72px 0}.pt .wrap,.dg .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.dg{background:var(--ink);color:#fff}.dg h2{color:var(--gold2)}.dg .sub{color:#cfc6b2}
+.card2{background:#fff;color:var(--ink);padding:26px;border-radius:4px;align-self:start}
+.guide{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:10px}.guide li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #4a3f2f;padding-bottom:8px;color:#e9e1cf}.guide b{color:var(--gold2)}
+.btn.out{background:none;border:2px solid var(--ink);color:var(--ink)}.btn.out:hover{background:#0001}
+.done{display:none;background:var(--ink);color:#fff;padding:22px;border-radius:4px;border-left:6px solid var(--gold)}.done h3{font-size:34px;color:var(--gold2);margin-bottom:8px}
+.minis{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.mini{display:flex;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;text-decoration:none}
+.mini img{width:38%;object-fit:cover;display:block}.mini .b{padding:18px;display:flex;flex-direction:column;gap:6px;justify-content:center}.mini h3{font-size:30px;font-weight:800}.mini p{margin:0;color:var(--mut);font-size:15px}.mini .go{font-weight:700;color:var(--red)}
+.mini.dk{background:var(--ink);color:#fff;border-color:var(--ink)}.mini.dk p{color:#cfc6b2}.mini.dk h3{color:var(--gold2)}.mini .ext{width:38%;display:grid;place-items:center;background:#0b0907;color:var(--gold);font:800 26px 'Big Shoulders Display',sans-serif;letter-spacing:.08em;text-align:center;line-height:1.2}
+@media(max-width:900px){.pt .wrap,.dg .wrap,.minis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="bar">Now booking December &amp; January orders. November is fully booked.</div>
+<nav><div class="wrap">
+<a class="logo" href="#top"><img src="images/logo.png" alt="Hernandez Custom Embroidery"></a>
+<div class="nav-r"><a class="hide" href="#shop">Shop</a><a class="hide" href="#patches">Patches</a><a class="hide" href="#digitizing">Digitizing</a><a class="hide" href="#how">How it works</a><a class="hide" href="tel:+16269913086">626-991-3086</a><a class="btn" href="#order" style="padding:10px 18px;font-size:15px">Start my order</a></div>
+</div></nav>
 
-    <header class="hero" id="top">
-      <div class="wrap">
-        <div>
-          <h1>Your name.<br />Your colors.<br />Stitched for the ring.</h1>
-          <p>
-            Custom boxing trunks, robes, team apparel and hats, embroidered by
-            hand in Glendale, Arizona. Type your name and see it on the
-            waistband before you order.
-          </p>
-          <label class="try" for="nm">Type your fighter name</label>
-          <input
-            id="nm"
-            class="name-in"
-            value="RODRIGUEZ"
-            maxlength="18"
-            autocomplete="off"
-          />
-          <div class="sw" role="group" aria-label="Trunk color">
-            <span>Trunks</span
-            ><span id="bodyDots" class="dots" style="min-width: 0"></span>
-          </div>
-          <div class="sw" role="group" aria-label="Trim color">
-            <span>Trim</span
-            ><span id="trimDots" class="dots" style="min-width: 0"></span>
-          </div>
-          <div class="cta-row">
-            <a class="btn" href="#order">Order these trunks</a
-            ><a class="btn ghost" href="#shop">See everything we make</a>
-          </div>
-        </div>
-        <div class="stage">
-          <div id="stage"></div>
-          <small
-            >Live preview. Final stitching is confirmed with a mockup before we
-            start.</small
-          >
-        </div>
-      </div>
-    </header>
+<header class="hero" id="top"><div class="wrap">
+<div>
+<h1>Your name.<br>Your colors.<br>Stitched for the ring.</h1>
+<p>Custom boxing trunks, robes, team apparel and hats, embroidered by hand in Glendale, Arizona. Type your name and see it on the waistband before you order.</p>
+<label class="try" for="nm">Type your fighter name</label>
+<input id="nm" class="name-in" value="RODRIGUEZ" maxlength="18" autocomplete="off">
+<div class="sw" role="group" aria-label="Trunk color"><span>Trunks</span><span id="bodyDots" class="dots" style="min-width:0"></span></div>
+<div class="sw" role="group" aria-label="Trim color"><span>Trim</span><span id="trimDots" class="dots" style="min-width:0"></span></div>
+<div class="cta-row"><a class="btn" href="#order">Order these trunks</a><a class="btn ghost" href="#shop">See everything we make</a></div>
+</div>
+<div class="stage"><div id="stage"></div><small>Live preview. Final stitching is confirmed with a mockup before we start.</small></div>
+</div></header>
 
-    <section class="work">
-      <div class="wrap">
-        <h2>Made for real fighters</h2>
-        <p class="sub">
-          Recent orders from our Glendale shop, made with Vargas Custom Boxing
-          Trunks. Yours could be next.
-        </p>
-        <div class="gal">
-          <img
-            src="images/gallery-01.jpg"
-            alt="Boxer in custom silver sparkle outfit and white trunks"
-            loading="lazy"
-          /><img
-            src="images/gallery-02.jpg"
-            alt="Two fighters in custom CHAPO and MORENO trunks"
-            loading="lazy"
-          /><img
-            src="images/gallery-03.jpg"
-            alt="Blue and gold GUADALUPE custom trunks"
-            loading="lazy"
-          /><img
-            src="images/gallery-04.jpg"
-            alt="Black custom robe and PEREZ trunks on a mannequin"
-            loading="lazy"
-          /><img
-            src="images/gallery-05.jpg"
-            alt="Blue sparkle FERNANDEZ trunks covered in embroidered patches"
-            loading="lazy"
-          /><img
-            src="images/gallery-06.jpg"
-            alt="Maroon GALLITO trunks with embroidered sponsor patches"
-            loading="lazy"
-          /><img
-            src="images/gallery-07.jpg"
-            alt="Black and gold ADAM trunks with sponsor logos"
-            loading="lazy"
-          /><img
-            src="images/gallery-08.jpg"
-            alt="White satin robe and trunks with gold trim"
-            loading="lazy"
-          /><img
-            src="images/gallery-09.jpg"
-            alt="Red metallic robe with embroidered crest"
-            loading="lazy"
-          /><img
-            src="images/gallery-10.jpg"
-            alt="Green sparkle MARTINEZ trunks"
-            loading="lazy"
-          /><img
-            src="images/gallery-11.jpg"
-            alt="Black satin trunks with embroidered sponsor patches"
-            loading="lazy"
-          /><img
-            src="images/gallery-12.jpg"
-            alt="Red satin CHICHO trunks with white trim"
-            loading="lazy"
-          />
-        </div>
-        <a
-          class="btn ghost"
-          href="https://www.instagram.com/hernandez_custom_embroidery/"
-          >See more on Instagram</a
-        >
-      </div>
-    </section>
+<section class="work"><div class="wrap"><h2>Made for real fighters</h2><p class="sub">Recent orders from our Glendale shop, made with Vargas Custom Boxing Trunks. Yours could be next.</p><div class="gal"><img src="images/gallery-01.jpg" alt="Boxer in custom silver sparkle outfit and white trunks" loading="lazy"><img src="images/gallery-02.jpg" alt="Two fighters in custom CHAPO and MORENO trunks" loading="lazy"><img src="images/gallery-03.jpg" alt="Blue and gold GUADALUPE custom trunks" loading="lazy"><img src="images/gallery-04.jpg" alt="Black custom robe and PEREZ trunks on a mannequin" loading="lazy"><img src="images/gallery-05.jpg" alt="Blue sparkle FERNANDEZ trunks covered in embroidered patches" loading="lazy"><img src="images/gallery-06.jpg" alt="Maroon GALLITO trunks with embroidered sponsor patches" loading="lazy"><img src="images/gallery-07.jpg" alt="Black and gold ADAM trunks with sponsor logos" loading="lazy"><img src="images/gallery-08.jpg" alt="White satin robe and trunks with gold trim" loading="lazy"><img src="images/gallery-09.jpg" alt="Red metallic robe with embroidered crest" loading="lazy"><img src="images/gallery-10.jpg" alt="Green sparkle MARTINEZ trunks" loading="lazy"><img src="images/gallery-11.jpg" alt="Black satin trunks with embroidered sponsor patches" loading="lazy"><img src="images/gallery-12.jpg" alt="Red satin CHICHO trunks with white trim" loading="lazy"></div><a class="btn ghost" href="https://www.instagram.com/hernandez_custom_embroidery/">See more on Instagram</a></div></section>
 
-    <section id="shop">
-      <div class="wrap">
-        <h2>What we make</h2>
-        <p class="sub">
-          Every piece is made to order. Pick one, add your text, and we send a
-          mockup for approval before a single stitch.
-        </p>
-        <div class="grid" id="cards"></div>
-      </div>
-    </section>
+<section id="shop"><div class="wrap">
+<h2>What we make</h2>
+<p class="sub">Every piece is made to order. Pick one, add your text, and we send a mockup for approval before a single stitch.</p>
+<div class="grid" id="cards"></div>
+<div class="minis">
+<a class="mini" href="#patches"><img src="images/product-patches.jpg" alt="Embroidered patches by Hernandez Custom Embroidery" loading="lazy"><div class="b"><h3>Embroidered patches</h3><p>Your logo, any shape, any backing. From 10 pieces.</p><span class="go">Design yours</span></div></a>
+<a class="mini dk" href="#digitizing"><div class="ext">DST<br>EMB<br>PES</div><div class="b"><h3>Digitizing</h3><p>We turn your artwork into a clean stitch file.</p><span class="go" style="color:var(--gold2)">Get a quote</span></div></a>
+</div>
 
-    <section class="order" id="order">
-      <div class="wrap">
-        <div>
-          <h2>Build your order</h2>
-          <p class="sub">
-            Tell us what you need. We reply with a mockup and a deposit link,
-            usually within one business day.
-          </p>
-          <form class="f" id="form">
-            <label>Product<select id="prod"></select></label>
-            <label
-              >Your custom text
-              <input
-                id="txt"
-                maxlength="18"
-                placeholder="Name, team, or gym"
-                autocomplete="off"
-            /></label>
-            <div class="two">
-              <label
-                >Size<select id="size">
-                  <option>Youth M</option>
-                  <option>Youth L</option>
-                  <option>S</option>
-                  <option selected>M</option>
-                  <option>L</option>
-                  <option>XL</option>
-                  <option>2XL</option>
-                </select></label
-              >
-              <label
-                >Quantity<input
-                  id="qty"
-                  type="number"
-                  min="1"
-                  max="50"
-                  value="1"
-              /></label>
-            </div>
-            <label>Main color<span class="dots" id="fBody"></span></label>
-            <label>Trim and thread<span class="dots" id="fTrim"></span></label>
-            <label class="chk"
-              ><input type="checkbox" data-p="10" /> Name down the leg
-              (+$10)</label
-            >
-            <label class="chk"
-              ><input type="checkbox" data-p="25" /> Sparkle or sequin fabric
-              (+$25)</label
-            >
-            <label class="chk"
-              ><input type="checkbox" data-p="20" /> Add my gym or sponsor logo
-              (+$20 digitizing)</label
-            >
-            <div class="two">
-              <label>Fight or event date<input id="date" type="date" /></label>
-              <label
-                >Your phone<input
-                  id="ph"
-                  type="tel"
-                  placeholder="(555) 123-4567"
-              /></label>
-            </div>
-            <label
-              >Notes or logo files<textarea
-                id="nt"
-                rows="3"
-                placeholder="Flag, sponsor names, anything else"
-              ></textarea>
-            </label>
-            <div class="total">
-              <span>Estimated total</span><b id="tot">$85</b>
-            </div>
-            <button class="btn red" type="submit">Request my mockup</button>
-            <p class="note">
-              Estimate only. A 50% deposit starts your order. Demo prices shown
-              for presentation.
-            </p>
-          </form>
-          <div id="done" role="status">
-            <h3>Request received</h3>
-            <p id="sum"></p>
-            <p>
-              We will text you your mockup and deposit link. Remember: we are
-              now booking December and January.
-            </p>
-          </div>
-        </div>
-        <div style="align-self: start; position: sticky; top: 96px">
-          <div class="stage"><div id="stage2"></div></div>
-        </div>
-      </div>
-    </section>
+</div></section>
 
-    <section id="how">
-      <div class="wrap">
-        <h2>How it works</h2>
-        <p class="sub">From idea to fight night in four steps.</p>
-        <div class="steps">
-          <div>
-            <h3>Design</h3>
-            <p>Choose your product, colors and text on this page.</p>
-          </div>
-          <div>
-            <h3>Approve</h3>
-            <p>We send a mockup. You approve it and pay the 50% deposit.</p>
-          </div>
-          <div>
-            <h3>Stitch</h3>
-            <p>We digitize your design and embroider it by hand.</p>
-          </div>
-          <div>
-            <h3>Fight</h3>
-            <p>Pick up in Glendale or have it shipped before your date.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="order" id="order"><div class="wrap">
+<div>
+<h2>Build your order</h2>
+<p class="sub">Tell us what you need. We reply with a mockup and a deposit link, usually within one business day.</p>
+<form class="f" id="form">
+<label>Product<select id="prod"></select></label>
+<label>Your custom text <input id="txt" maxlength="18" placeholder="Name, team, or gym" autocomplete="off"></label>
+<div class="two">
+<label>Size<select id="size"><option>Youth M</option><option>Youth L</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>2XL</option></select></label>
+<label>Quantity<input id="qty" type="number" min="1" max="50" value="1"></label>
+</div>
+<label>Main color<span class="dots" id="fBody"></span></label>
+<label>Trim and thread<span class="dots" id="fTrim"></span></label>
+<label class="chk"><input type="checkbox" data-p="10"> Name down the leg (+$10)</label>
+<label class="chk"><input type="checkbox" data-p="25"> Sparkle or sequin fabric (+$25)</label>
+<label class="chk"><input type="checkbox" data-p="20"> Add my gym or sponsor logo (+$20 digitizing)</label>
+<div class="two">
+<label>Fight or event date<input id="date" type="date"></label>
+<label>Your phone<input id="ph" type="tel" placeholder="(555) 123-4567"></label>
+</div>
+<label>Notes or logo files<textarea id="nt" rows="3" placeholder="Flag, sponsor names, anything else"></textarea></label>
+<div class="total"><span>Estimated total</span><b id="tot">$85</b></div>
+<button class="btn red" type="submit">Request my mockup</button>
+<p class="note">Estimate only. A 50% deposit starts your order. Demo prices shown for presentation.</p>
+</form>
+<div id="done" role="status"><h3>Request received</h3><p id="sum"></p><p>We will text you your mockup and deposit link. Remember: we are now booking December and January.</p></div>
+</div>
+<div style="align-self:start;position:sticky;top:96px"><div class="stage"><div id="stage2"></div></div></div>
+</div></section>
 
-    <section style="padding-top: 0">
-      <div class="wrap svc">
-        <div>
-          <h3>Custom ringwear</h3>
-          <p>
-            Trunks, robes and jackets for amateurs and pros, including our
-            Vargas Custom Boxing Trunks line.
-          </p>
-        </div>
-        <div>
-          <h3>Team and gym apparel</h3>
-          <p>
-            Hoodies, tees and hats for your whole corner. Coach, team and
-            sponsor lettering done right.
-          </p>
-        </div>
-        <div>
-          <h3>Digitizing services</h3>
-          <p>
-            Have a logo? We convert it into a clean stitch file for your own
-            machine or for our work.
-          </p>
-        </div>
-      </div>
-    </section>
+<section class="pt" id="patches"><div class="wrap">
+<div>
+<h2>Custom embroidered patches</h2>
+<p class="sub">Upload your logo, choose size and backing, and see your price right away. We send a free digital proof before we stitch. Minimum 10 pieces.</p>
+<form class="f" id="pform">
+<div class="gl">Patch type</div><div class="chips" id="pType"></div>
+<label class="drop"><input type="file" id="pfile" accept="image/*,.pdf,.ai,.eps"><span id="pfn">Upload your design</span><small>Logo, sketch or photo. We turn it into a stitch-ready patch.</small></label>
+<label>Text on patch (preview only)<input id="ptx" maxlength="16" value="TEAM NAME" autocomplete="off"></label>
+<div class="two"><label>Width (inches)<input id="pw" type="number" min="1" max="12" step=".25" value="3"></label><label>Height (inches)<input id="ph" type="number" min="1" max="12" step=".25" value="3"></label></div>
+<div class="gl">Shape</div><div class="chips" id="pShape"></div>
+<div class="gl">Patch color</div><div class="dots" id="pBg"></div>
+<div class="gl">Thread and border color</div><div class="dots" id="pTh"></div>
+<div class="gl">Border</div><div class="chips" id="pBorder"></div>
+<div class="gl">Backing (+$0.50 each)</div><div class="chips" id="pBack"></div>
+<label>Quantity (10 minimum)<input id="pqty" type="number" min="10" value="25"></label>
+<table class="qt" id="ptab"></table>
+<label>Design notes (optional)<textarea rows="2" placeholder="Colors, text, anything we should know"></textarea></label>
+<div class="total"><span>Estimated total</span><b id="ptot">$0</b></div>
+<button class="btn red" type="submit">Request my free proof</button>
+<button class="btn out" type="button" id="qbtn">Need 500+ pieces or something custom? Get a quote</button>
+<p class="note">Demo prices for presentation. Final price is confirmed with your proof.</p>
+</form>
+<div class="done"><h3>Request received</h3><p></p></div>
+<form class="f" id="qform" style="display:none;margin-top:22px">
+<div class="gl" style="font-size:20px">Custom patch quote</div>
+<label>Your name<input required></label>
+<div class="two"><label>Phone<input type="tel" required></label><label>Email<input type="email" required></label></div>
+<label>Best time for a call (optional)<select><option>No call needed</option><option>Morning (9am to 12pm)</option><option>Afternoon (12pm to 3pm)</option><option>Late afternoon (3pm to 6pm)</option></select></label>
+<label>What do you need?<textarea rows="3" placeholder="Quantity, size, patch type, deadline"></textarea></label>
+<button class="btn red" type="submit">Send quote request</button>
+</form>
+<div class="done"><h3>Quote requested</h3><p></p></div>
+</div>
+<div style="align-self:start;position:sticky;top:96px"><div class="stage"><div id="pstage"></div><small>Live preview. You approve a proof before we stitch.</small></div></div>
+</div></section>
 
-    <section class="pitch">
-      <div class="wrap">
-        <h2>What this website does for your shop</h2>
-        <p class="sub">
-          Demo note for Hernandez Embroidery. This section comes out of the
-          final site.
-        </p>
-        <ul>
-          <li>
-            <b>Orders come in while you sleep</b
-            ><span
-              >Customers build their order any time, instead of waiting on a DM
-              reply.</span
-            >
-          </li>
-          <li>
-            <b>Fewer back-and-forth messages</b
-            ><span
-              >Size, colors, text, date and phone arrive in one clean
-              request.</span
-            >
-          </li>
-          <li>
-            <b>Fills your calendar</b
-            ><span
-              >The booking banner tells people when you are open, so you stop
-              turning away last-minute rushes.</span
-            >
-          </li>
-          <li>
-            <b>Looks as good as your work</b
-            ><span
-              >A dedicated site, found on Google, with your name on it.
-              Instagram stays for showing off, the site closes the sale.</span
-            >
-          </li>
-        </ul>
-      </div>
-    </section>
+<section class="dg" id="digitizing"><div class="wrap">
+<div>
+<h2>Digitizing for patches</h2>
+<p class="sub">Digitizing turns your logo or artwork into a stitch file, the set of instructions an embroidery machine follows. Send your design and we quote it.</p>
+<ul class="guide"><li><span>Small (under 2 in, hats and small patches)</span><b>from $20</b></li><li><span>Medium (2 to 4 in, chest and patches)</span><b>from $35</b></li><li><span>Large (4 to 8 in)</span><b>from $55</b></li><li><span>Jacket back (10 in and up)</span><b>from $85</b></li></ul>
+<p class="note" style="color:#bdb39d">Demo prices. Your quote depends on size, colors and detail.</p>
+</div>
+<div class="card2">
+<form class="f" id="dform">
+<div class="gl" style="font-size:22px">Get a digitizing quote</div>
+<label>Your name<input required></label>
+<div class="two"><label>Phone<input type="tel" required></label><label>Email<input id="dem" type="email" required></label></div>
+<label class="drop"><input type="file" multiple accept="image/*,.pdf,.ai,.eps"><span id="dfn">Upload your artwork</span><small>PNG, JPG, PDF or AI. Send as many files as you need.</small></label>
+<div class="two"><label>Stitch file format<select><option>DST</option><option>EMB</option><option>PES</option><option>JEF</option><option>Not sure</option></select></label>
+<label>Use<select><option>Patch</option><option>Hat front</option><option>Left chest</option><option>Jacket back</option><option>Trunks or waistband</option><option>Other</option></select></label></div>
+<div class="two"><label>Approx. size (inches)<input placeholder="e.g. 3 x 3"></label><label>Number of colors<select><option>1 to 3</option><option>4 to 6</option><option>7 to 10</option><option>10+</option></select></label></div>
+<label class="chk"><input type="checkbox"> Rush turnaround</label>
+<label>Notes (optional)<textarea rows="2" placeholder="Fabric, thread colors, anything we should know"></textarea></label>
+<button class="btn red" type="submit">Request digitizing quote</button>
+</form>
+<div class="done"><h3>Quote requested</h3><p></p></div>
+</div>
+</div></section>
 
-    <section class="contact">
-      <div class="wrap">
-        <h2>Booked for November. Open for December.</h2>
-        <p>
-          Text or call to reserve your date. Tell us your fight date and we will
-          tell you if it fits.
-        </p>
-        <a class="btn" href="tel:+16269913086">Call Becca 626-991-3086</a>
-        <p style="margin-top: 16px">
-          Or Maria at <a href="tel:+14808090922">480-809-0922</a>
-        </p>
-      </div>
-    </section>
-    <footer>
-      <div class="wrap">
-        <span>Hernandez Custom Embroidery, Glendale, Arizona</span
-        ><span
-          ><a href="https://www.instagram.com/hernandez_custom_embroidery/"
-            >Instagram</a
-          >
-          ·
-          <a
-            href="https://www.facebook.com/p/Hernandez-Custom-Embroidery-61551673787844/"
-            >Facebook</a
-          ></span
-        >
-      </div>
-    </footer>
+<section id="how"><div class="wrap">
+<h2>How it works</h2>
+<p class="sub">From idea to fight night in four steps.</p>
+<div class="steps">
+<div><h3>Design</h3><p>Choose your product, colors and text on this page.</p></div>
+<div><h3>Approve</h3><p>We send a mockup. You approve it and pay the 50% deposit.</p></div>
+<div><h3>Stitch</h3><p>We digitize your design and embroider it by hand.</p></div>
+<div><h3>Fight</h3><p>Pick up in Glendale or have it shipped before your date.</p></div>
+</div></div></section>
 
-    <script>
-      var BODY = {
-        Red: "#b3202a",
-        Royal: "#1f3fa8",
-        Black: "#15110d",
-        Pink: "#d63384",
-        Purple: "#5b2a86",
-      };
-      var TRIM = { Gold: "#d4af37", Silver: "#d9dce1", White: "#ffffff" };
-      var P = {
-        trunks: {
-          n: "Custom trunks",
-          p: 85,
-          d: "Satin or sparkle, with waistband name, leg text and patches.",
-        },
-        robe: {
-          n: "Fight robe",
-          p: 150,
-          d: "Walkout robe with your name across the back.",
-        },
-        hoodie: {
-          n: "Team hoodie",
-          p: 55,
-          d: "Coach, team or gym lettering for the whole corner.",
-        },
-        hat: {
-          n: "Embroidered hat",
-          p: 30,
-          d: "Your name or logo, stitched clean on the front.",
-        },
-      };
-      var IMG = {
-        trunks: "images/product-trunks.jpg",
-        robe: "images/product-robe.jpg",
-        hoodie: "images/product-hoodie.jpg",
-        hat: "images/product-hat.jpg",
-      };
-      var S = { kind: "trunks", body: "Red", trim: "Gold", text: "RODRIGUEZ" };
-      function art(k, b, t, txt) {
-        var c = BODY[b],
-          g = TRIM[t],
-          x = (txt || "YOUR NAME").toUpperCase(),
-          n = x.length;
-        var fs = Math.max(11, Math.min(28, 150 / (n * 0.5)));
-        var T = function (y, s) {
-          return (
-            '<text x="150" y="' +
-            y +
-            '" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="800" font-size="' +
-            s +
-            '" letter-spacing="1.5" fill="' +
-            g +
-            '">' +
-            x.replace(/&/g, "&amp;").replace(/</g, "&lt;") +
-            "</text>"
-          );
-        };
-        var o =
-          '<svg viewBox="0 0 300 260" role="img" aria-label="' +
-          P[k].n +
-          ' preview">';
-        if (k == "trunks")
-          o +=
-            '<path d="M58 64H148L141 222Q98 234 44 218Z" fill="' +
-            c +
-            '"/><path d="M152 64H242L256 218Q202 234 159 222Z" fill="' +
-            c +
-            '"/><path d="M58 64L44 218M242 64L256 218" stroke="' +
-            g +
-            '" stroke-width="7" fill="none"/><path d="M45 205Q98 220 141 210M159 210Q202 220 255 205" stroke="' +
-            g +
-            '" stroke-width="5" fill="none"/><path d="M58 64H148L146 110Q100 118 52 100Z" fill="#fff" opacity=".08"/><rect x="52" y="30" width="196" height="40" rx="5" fill="' +
-            c +
-            '" stroke="' +
-            g +
-            '" stroke-width="4"/><rect x="52" y="30" width="196" height="40" rx="5" fill="#000" opacity=".25"/>' +
-            T(60, fs) +
-            '<circle cx="100" cy="150" r="17" fill="none" stroke="' +
-            g +
-            '" stroke-width="3"/><path d="M92 150l8-9 8 9-8 9z" fill="' +
-            g +
-            '"/>';
-        if (k == "robe")
-          o +=
-            '<path d="M92 40L150 30L208 40L262 118L238 140L222 116V246H78V116L62 140L38 118Z" fill="' +
-            c +
-            '"/><path d="M92 40L150 30L208 40L150 90Z" fill="' +
-            g +
-            '"/><path d="M78 236H222" stroke="' +
-            g +
-            '" stroke-width="8"/><path d="M150 90V246" stroke="#000" opacity=".25" stroke-width="3"/>' +
-            T(150, fs * 0.8);
-        if (k == "hoodie")
-          o +=
-            '<path d="M82 60L120 36Q150 74 180 36L218 60L262 112L238 134L222 108V236H78V108L62 134L38 112Z" fill="' +
-            c +
-            '"/><path d="M120 36Q150 74 180 36Q150 22 120 36Z" fill="#000" opacity=".35"/><path d="M100 190H200L208 236H92Z" fill="#000" opacity=".2"/>' +
-            T(138, fs * 0.75);
-        if (k == "hat")
-          o +=
-            '<path d="M64 160Q60 66 150 66Q240 66 236 160Z" fill="' +
-            c +
-            '"/><path d="M52 160H248Q262 190 150 196Q38 190 52 160Z" fill="' +
-            c +
-            '" stroke="' +
-            g +
-            '" stroke-width="4"/><circle cx="150" cy="66" r="6" fill="' +
-            g +
-            '"/>' +
-            T(122, fs * 0.7);
-        return o + "</svg>";
-      }
-      function dots(id, map, key) {
-        var el = document.getElementById(id);
-        el.innerHTML = "";
-        Object.keys(map).forEach(function (k) {
-          var d = document.createElement("button");
-          d.type = "button";
-          d.className = "dot";
-          d.style.background = map[k];
-          d.title = k;
-          d.setAttribute("aria-label", k);
-          d.setAttribute("aria-pressed", S[key] == k);
-          d.onclick = function () {
-            S[key] = k;
-            sync();
-          };
-          el.appendChild(d);
-        });
-      }
-      function price() {
-        var a = +document.getElementById("qty").value || 1,
-          e = 0;
-        document.querySelectorAll("[data-p]").forEach(function (c) {
-          if (c.checked) e += +c.dataset.p;
-        });
-        return (P[S.kind].p + e) * a;
-      }
-      function sync() {
-        document.getElementById("stage").innerHTML = art(
-          S.kind,
-          S.body,
-          S.trim,
-          S.text,
-        );
-        document.getElementById("stage2").innerHTML = art(
-          S.kind,
-          S.body,
-          S.trim,
-          S.text,
-        );
-        ["bodyDots", "fBody"].forEach(function (i) {
-          dots(i, BODY, "body");
-        });
-        ["trimDots", "fTrim"].forEach(function (i) {
-          dots(i, TRIM, "trim");
-        });
-        document.getElementById("prod").value = S.kind;
-        document.getElementById("tot").textContent = "$" + price();
-      }
-      var cards = document.getElementById("cards"),
-        sel = document.getElementById("prod");
-      Object.keys(P).forEach(function (k) {
-        var o = document.createElement("option");
-        o.value = k;
-        o.textContent = P[k].n + " (from $" + P[k].p + ")";
-        sel.appendChild(o);
-        var c = document.createElement("div");
-        c.className = "card";
-        c.innerHTML =
-          '<div class="art"><img src="' +
-          IMG[k] +
-          '" alt="' +
-          P[k].n +
-          ' by Hernandez Custom Embroidery" loading="lazy"></div><div class="b"><h3>' +
-          P[k].n +
-          "</h3><p>" +
-          P[k].d +
-          '</p><span class="price">From $' +
-          P[k].p +
-          '</span><a class="btn" href="#order" data-k="' +
-          k +
-          '">Customize this</a></div>';
-        cards.appendChild(c);
-      });
-      cards.addEventListener("click", function (e) {
-        var k = e.target.dataset && e.target.dataset.k;
-        if (k) {
-          S.kind = k;
-          sync();
-        }
-      });
-      sel.onchange = function () {
-        S.kind = sel.value;
-        sync();
-      };
-      document.getElementById("nm").oninput = function () {
-        S.text = this.value;
-        document.getElementById("txt").value = this.value;
-        sync();
-      };
-      document.getElementById("txt").value = S.text;
-      document.getElementById("txt").oninput = function () {
-        S.text = this.value;
-        document.getElementById("nm").value = this.value;
-        sync();
-      };
-      document.getElementById("qty").oninput = sync;
-      document.querySelectorAll("[data-p]").forEach(function (c) {
-        c.onchange = sync;
-      });
-      document.getElementById("form").onsubmit = function (e) {
-        e.preventDefault();
-        document.getElementById("sum").textContent =
-          document.getElementById("qty").value +
-          " × " +
-          P[S.kind].n +
-          ' for "' +
-          (S.text || "no text") +
-          '", ' +
-          S.body +
-          " with " +
-          S.trim +
-          " trim, size " +
-          document.getElementById("size").value +
-          ". Estimated total $" +
-          price() +
-          ".";
-        this.style.display = "none";
-        var d = document.getElementById("done");
-        d.style.display = "block";
-        d.scrollIntoView({ block: "center" });
-      };
-      sync();
-    </script>
-  </body>
+<section style="padding-top:0"><div class="wrap svc">
+<div><h3>Custom ringwear</h3><p>Trunks, robes and jackets for amateurs and pros, including our Vargas Custom Boxing Trunks line.</p></div>
+<div><h3>Team and gym apparel</h3><p>Hoodies, tees, hats and embroidered patches for your whole corner. Coach, team and sponsor lettering done right.</p></div>
+<div><h3>Digitizing services</h3><p>Have a logo? We convert it into a clean stitch file for your own machine or for our work.</p></div>
+</div></section>
+
+<section class="pitch"><div class="wrap">
+<h2>What this website does for your shop</h2>
+<p class="sub">Demo note for Hernandez Embroidery. This section comes out of the final site.</p>
+<ul>
+<li><b>Orders come in while you sleep</b><span>Customers build their order any time, instead of waiting on a DM reply.</span></li>
+<li><b>Fewer back-and-forth messages</b><span>Size, colors, text, date and phone arrive in one clean request.</span></li>
+<li><b>Fills your calendar</b><span>The booking banner tells people when you are open, so you stop turning away last-minute rushes.</span></li>
+<li><b>Looks as good as your work</b><span>A dedicated site, found on Google, with your name on it. Instagram stays for showing off, the site closes the sale.</span></li>
+</ul>
+</div></section>
+
+<section class="contact"><div class="wrap">
+<h2>Booked for November. Open for December.</h2>
+<p>Text or call to reserve your date. Tell us your fight date and we will tell you if it fits.</p>
+<a class="btn" href="tel:+16269913086">Call Becca 626-991-3086</a>
+<p style="margin-top:16px">Or Maria at <a href="tel:+14808090922">480-809-0922</a></p>
+</div></section>
+<footer><div class="wrap"><span>Hernandez Custom Embroidery, Glendale, Arizona</span><span><a href="https://www.instagram.com/hernandez_custom_embroidery/">Instagram</a> · <a href="https://www.facebook.com/p/Hernandez-Custom-Embroidery-61551673787844/">Facebook</a></span></div></footer>
+
+<script>
+var BODY={Red:'#b3202a',Royal:'#1f3fa8',Black:'#15110d',Pink:'#d63384',Purple:'#5b2a86'};
+var TRIM={Gold:'#d4af37',Silver:'#d9dce1',White:'#ffffff'};
+var P={trunks:{n:'Custom trunks',p:85,d:'Satin or sparkle, with waistband name, leg text and patches.'},robe:{n:'Fight robe',p:150,d:'Walkout robe with your name across the back.'},hoodie:{n:'Team hoodie',p:55,d:'Coach, team or gym lettering for the whole corner.'},hat:{n:'Embroidered hat',p:30,d:'Your name or logo, stitched clean on the front.'}};
+var IMG={trunks:'images/product-trunks.jpg',robe:'images/product-robe.jpg',hoodie:'images/product-hoodie.jpg',hat:'images/product-hat.jpg'};
+var S={kind:'trunks',body:'Red',trim:'Gold',text:'RODRIGUEZ'};
+function art(k,b,t,txt){
+ var c=BODY[b],g=TRIM[t],x=(txt||'YOUR NAME').toUpperCase(),n=x.length;
+ var fs=Math.max(11,Math.min(28,150/(n*.5)));
+ var T=function(y,s){return '<text x="150" y="'+y+'" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="800" font-size="'+s+'" letter-spacing="1.5" fill="'+g+'">'+x.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</text>'};
+ var o='<svg viewBox="0 0 300 260" role="img" aria-label="'+P[k].n+' preview">';
+ if(k=='trunks')o+='<path d="M58 64H148L141 222Q98 234 44 218Z" fill="'+c+'"/><path d="M152 64H242L256 218Q202 234 159 222Z" fill="'+c+'"/><path d="M58 64L44 218M242 64L256 218" stroke="'+g+'" stroke-width="7" fill="none"/><path d="M45 205Q98 220 141 210M159 210Q202 220 255 205" stroke="'+g+'" stroke-width="5" fill="none"/><path d="M58 64H148L146 110Q100 118 52 100Z" fill="#fff" opacity=".08"/><rect x="52" y="30" width="196" height="40" rx="5" fill="'+c+'" stroke="'+g+'" stroke-width="4"/><rect x="52" y="30" width="196" height="40" rx="5" fill="#000" opacity=".25"/>'+T(60,fs)+'<circle cx="100" cy="150" r="17" fill="none" stroke="'+g+'" stroke-width="3"/><path d="M92 150l8-9 8 9-8 9z" fill="'+g+'"/>';
+ if(k=='robe')o+='<path d="M92 40L150 30L208 40L262 118L238 140L222 116V246H78V116L62 140L38 118Z" fill="'+c+'"/><path d="M92 40L150 30L208 40L150 90Z" fill="'+g+'"/><path d="M78 236H222" stroke="'+g+'" stroke-width="8"/><path d="M150 90V246" stroke="#000" opacity=".25" stroke-width="3"/>'+T(150,fs*.8);
+ if(k=='hoodie')o+='<path d="M82 60L120 36Q150 74 180 36L218 60L262 112L238 134L222 108V236H78V108L62 134L38 112Z" fill="'+c+'"/><path d="M120 36Q150 74 180 36Q150 22 120 36Z" fill="#000" opacity=".35"/><path d="M100 190H200L208 236H92Z" fill="#000" opacity=".2"/>'+T(138,fs*.75);
+ if(k=='hat')o+='<path d="M64 160Q60 66 150 66Q240 66 236 160Z" fill="'+c+'"/><path d="M52 160H248Q262 190 150 196Q38 190 52 160Z" fill="'+c+'" stroke="'+g+'" stroke-width="4"/><circle cx="150" cy="66" r="6" fill="'+g+'"/>'+T(122,fs*.7);
+ return o+'</svg>';
+}
+function dots(id,map,key){var el=document.getElementById(id);el.innerHTML='';Object.keys(map).forEach(function(k){var d=document.createElement('button');d.type='button';d.className='dot';d.style.background=map[k];d.title=k;d.setAttribute('aria-label',k);d.setAttribute('aria-pressed',S[key]==k);d.onclick=function(){S[key]=k;sync()};el.appendChild(d)})}
+function price(){var a=+document.getElementById('qty').value||1,e=0;document.querySelectorAll('[data-p]').forEach(function(c){if(c.checked)e+=+c.dataset.p});return (P[S.kind].p+e)*a}
+function sync(){
+ document.getElementById('stage').innerHTML=art(S.kind,S.body,S.trim,S.text);
+ document.getElementById('stage2').innerHTML=art(S.kind,S.body,S.trim,S.text);
+ ['bodyDots','fBody'].forEach(function(i){dots(i,BODY,'body')});['trimDots','fTrim'].forEach(function(i){dots(i,TRIM,'trim')});
+ document.getElementById('prod').value=S.kind;
+ document.getElementById('tot').textContent='$'+price();
+}
+var cards=document.getElementById('cards'),sel=document.getElementById('prod');
+Object.keys(P).forEach(function(k){
+ var o=document.createElement('option');o.value=k;o.textContent=P[k].n+' (from $'+P[k].p+')';sel.appendChild(o);
+ var c=document.createElement('div');c.className='card';
+ c.innerHTML='<div class="art"><img src="'+IMG[k]+'" alt="'+P[k].n+' by Hernandez Custom Embroidery" loading="lazy"></div><div class="b"><h3>'+P[k].n+'</h3><p>'+P[k].d+'</p><span class="price">From $'+P[k].p+'</span><a class="btn" href="#order" data-k="'+k+'">Customize this</a></div>';
+ cards.appendChild(c)});
+cards.addEventListener('click',function(e){var k=e.target.dataset&&e.target.dataset.k;if(k){S.kind=k;sync()}});
+sel.onchange=function(){S.kind=sel.value;sync()};
+document.getElementById('nm').oninput=function(){S.text=this.value;document.getElementById('txt').value=this.value;sync()};
+document.getElementById('txt').value=S.text;
+document.getElementById('txt').oninput=function(){S.text=this.value;document.getElementById('nm').value=this.value;sync()};
+document.getElementById('qty').oninput=sync;
+document.querySelectorAll('[data-p]').forEach(function(c){c.onchange=sync});
+document.getElementById('form').onsubmit=function(e){e.preventDefault();
+ document.getElementById('sum').textContent=document.getElementById('qty').value+' × '+P[S.kind].n+' for "'+(S.text||'no text')+'", '+S.body+' with '+S.trim+' trim, size '+document.getElementById('size').value+'. Estimated total $'+price()+'.';
+ this.style.display='none';var d=document.getElementById('done');d.style.display='block';d.scrollIntoView({block:'center'})};
+sync();
+var PS={type:'Embroidered',shape:'Custom',bg:'Black',th:'Gold',border:'Merrowed',back:'Heat applied',img:null};
+var MULT={'Embroidered':1,'3D Puff':1.5,'Woven':.9,'Chenille':2},TIERS=[[10,0,'10 to 24'],[25,.08,'25 to 49'],[50,.15,'50 to 99'],[100,.25,'100 to 249'],[250,.32,'250+']];
+function $(i){return document.getElementById(i)}
+function chips(id,opts,key){var el=$(id);el.innerHTML='';opts.forEach(function(o){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=o;b.setAttribute('aria-pressed',PS[key]==o);b.onclick=function(){PS[key]=o;psync()};el.appendChild(b)})}
+function dots2(id,map,key){var el=$(id);el.innerHTML='';Object.keys(map).forEach(function(k){var d=document.createElement('button');d.type='button';d.className='dot';d.style.background=map[k];d.title=k;d.setAttribute('aria-label',k);d.setAttribute('aria-pressed',PS[key]==k);d.onclick=function(){PS[key]=k;psync()};el.appendChild(d)})}
+function qd(q){var d=0;TIERS.forEach(function(t){if(q>=t[0])d=t[1]});return d}
+function unit(q){var a=((+$('pw').value||3)+(+$('ph').value||3))/2;return Math.max(.5,(.9+.5*a)*MULT[PS.type]*(1-qd(q)))+(PS.back=='No backing'?0:.5)}
+function pArt(){
+ var th=TRIM[PS.th],bg=BODY[PS.bg],sh={Circle:'<circle cx="150" cy="110" r="92"',Square:'<rect x="58" y="18" width="184" height="184" rx="14"',Rectangle:'<rect x="30" y="45" width="240" height="130" rx="12"',Custom:'<path d="M150 14L250 40V110Q250 180 150 208Q50 180 50 110V40Z"'}[PS.shape];
+ var m=PS.border=='Merrowed',x=($('ptx').value||'').toUpperCase().replace(/&/g,'&amp;').replace(/</g,'&lt;'),fs=Math.max(12,Math.min(30,150/(x.length*.55||1)));
+ var o='<svg viewBox="0 0 300 220" role="img" aria-label="Patch preview">'+sh+' fill="'+bg+'" stroke="'+th+'" stroke-width="'+(m?10:2)+'" stroke-linejoin="round"/>';
+ o+='<g transform="translate(150 110) scale(.84) translate(-150 -110)">'+sh+' fill="none" stroke="'+th+'" stroke-width="2" stroke-dasharray="6 4"/></g>';
+ if(PS.img)o+='<image href="'+PS.img+'" x="85" y="48" width="130" height="124" preserveAspectRatio="xMidYMid meet"/>';
+ else o+='<path d="M150 52l14 24-14 24-14-24z" fill="'+th+'"/><text x="150" y="'+(128+fs*.2)+'" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="800" font-size="'+fs+'" letter-spacing="1.5" fill="'+th+'">'+x+'</text>';
+ return o+'</svg>'}
+function psync(){
+ chips('pType',Object.keys(MULT),'type');chips('pShape',['Custom','Circle','Square','Rectangle'],'shape');chips('pBorder',['Merrowed','Heat cut'],'border');chips('pBack',['No backing','Heat applied','Peel & stick','Velcro'],'back');
+ dots2('pBg',BODY,'bg');dots2('pTh',TRIM,'th');
+ $('pstage').innerHTML=pArt();
+ var q=Math.max(10,+$('pqty').value||10),h='<tr><th>Quantity</th><th>Each</th><th>Total</th></tr>';
+ TIERS.forEach(function(t,i){var n=TIERS[i+1]?TIERS[i+1][0]:1e9,on=q>=t[0]&&q<n,u=unit(t[0]);h+='<tr'+(on?' class="on"':'')+'><td>'+t[2]+'</td><td>$'+u.toFixed(2)+'</td><td>$'+(u*t[0]).toFixed(0)+'+</td></tr>'});
+ $('ptab').innerHTML=h;$('ptot').textContent='$'+(unit(q)*q).toFixed(2);
+}
+function fin(f,msg){f.style.display='none';var d=f.nextElementSibling;d.querySelector('p').textContent=msg;d.style.display='block';d.scrollIntoView({block:'center'})}
+['ptx','pw','ph','pqty'].forEach(function(i){$(i).oninput=psync});
+$('pfile').onchange=function(){var f=this.files[0];if(!f)return;$('pfn').textContent=f.name;PS.img=null;if(/^image/.test(f.type)){var r=new FileReader();r.onload=function(){PS.img=r.result;psync()};r.readAsDataURL(f)}else psync()};
+$('qbtn').onclick=function(){var q=$('qform');q.style.display='grid';q.scrollIntoView({block:'center'})};
+$('pform').onsubmit=function(e){e.preventDefault();var q=Math.max(10,+$('pqty').value||10);fin(this,q+' × '+PS.type+' patches, '+$('pw').value+' × '+$('ph').value+' in, '+PS.shape.toLowerCase()+', '+PS.back.toLowerCase()+'. Estimated total $'+(unit(q)*q).toFixed(2)+'. We will send your free digital proof to approve.')};
+$('qform').onsubmit=function(e){e.preventDefault();fin(this,'Thanks. We will review your request and call or text you with a custom quote.')};
+document.querySelector('#dform .drop input').onchange=function(){$('dfn').textContent=this.files.length+' file'+(this.files.length>1?'s':'')+' selected'};
+$('dform').onsubmit=function(e){e.preventDefault();fin(this,'Thanks. We will review your artwork and send a price and turnaround to '+$('dem').value+'.')};
+psync();
+</script>
+</body>
 </html>
