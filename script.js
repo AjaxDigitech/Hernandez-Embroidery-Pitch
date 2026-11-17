@@ -113,6 +113,7 @@ function art(k, b, t, txt) {
 }
 function dots(id, map, key) {
   var el = document.getElementById(id);
+  if (!el) return;
   el.innerHTML = "";
   Object.keys(map).forEach(function (k) {
     var d = document.createElement("button");
@@ -130,7 +131,8 @@ function dots(id, map, key) {
   });
 }
 function price() {
-  var a = +document.getElementById("qty").value || 1,
+  var qtyEl = document.getElementById("qty");
+  var a = qtyEl ? +qtyEl.value || 1 : 1,
     e = 0;
   document.querySelectorAll("[data-p]").forEach(function (c) {
     if (c.checked) e += +c.dataset.p;
@@ -138,100 +140,122 @@ function price() {
   return (P[S.kind].p + e) * a;
 }
 function sync() {
-  document.getElementById("stage").innerHTML = art(
-    S.kind,
-    S.body,
-    S.trim,
-    S.text,
-  );
-  document.getElementById("stage2").innerHTML = art(
-    S.kind,
-    S.body,
-    S.trim,
-    S.text,
-  );
+  var stage = document.getElementById("stage");
+  if (stage) {
+    stage.innerHTML = art(S.kind, S.body, S.trim, S.text);
+  }
+  var stage2 = document.getElementById("stage2");
+  if (stage2) {
+    stage2.innerHTML = art(S.kind, S.body, S.trim, S.text);
+  }
   ["bodyDots", "fBody"].forEach(function (i) {
     dots(i, BODY, "body");
   });
   ["trimDots", "fTrim"].forEach(function (i) {
     dots(i, TRIM, "trim");
   });
-  document.getElementById("prod").value = S.kind;
-  document.getElementById("tot").textContent = "$" + price();
+  var prod = document.getElementById("prod");
+  if (prod) prod.value = S.kind;
+  var tot = document.getElementById("tot");
+  if (tot) tot.textContent = "$" + price();
 }
 var cards = document.getElementById("cards"),
   sel = document.getElementById("prod");
 Object.keys(P).forEach(function (k) {
-  var o = document.createElement("option");
-  o.value = k;
-  o.textContent = P[k].n + " (from $" + P[k].p + ")";
-  sel.appendChild(o);
-  var c = document.createElement("div");
-  c.className = "card";
-  c.innerHTML =
-    '<div class="art"><img src="' +
-    IMG[k] +
-    '" alt="' +
-    P[k].n +
-    ' by Hernandez Custom Embroidery" loading="lazy"></div><div class="b"><h3>' +
-    P[k].n +
-    "</h3><p>" +
-    P[k].d +
-    '</p><span class="price">From $' +
-    P[k].p +
-    '</span><a class="btn" href="#order" data-k="' +
-    k +
-    '">Customize this</a></div>';
-  cards.appendChild(c);
-});
-cards.addEventListener("click", function (e) {
-  var k = e.target.dataset && e.target.dataset.k;
-  if (k) {
-    S.kind = k;
-    sync();
+  if (sel) {
+    var o = document.createElement("option");
+    o.value = k;
+    o.textContent = P[k].n + " (from $" + P[k].p + ")";
+    sel.appendChild(o);
+  }
+  if (cards) {
+    var c = document.createElement("div");
+    c.className = "card";
+    c.innerHTML =
+      '<div class="art"><img src="' +
+      IMG[k] +
+      '" alt="' +
+      P[k].n +
+      ' by Hernandez Custom Embroidery" loading="lazy"></div><div class="b"><h3>' +
+      P[k].n +
+      "</h3><p>" +
+      P[k].d +
+      '</p><span class="price">From $' +
+      P[k].p +
+      '</span><a class="btn" href="#quote" data-k="' +
+      k +
+      '">Customize this</a></div>';
+    cards.appendChild(c);
   }
 });
-sel.onchange = function () {
-  S.kind = sel.value;
-  sync();
-};
-document.getElementById("nm").oninput = function () {
-  S.text = this.value;
-  document.getElementById("txt").value = this.value;
-  sync();
-};
-document.getElementById("txt").value = S.text;
-document.getElementById("txt").oninput = function () {
-  S.text = this.value;
-  document.getElementById("nm").value = this.value;
-  sync();
-};
-document.getElementById("qty").oninput = sync;
+if (cards) {
+  cards.addEventListener("click", function (e) {
+    var k = e.target.dataset && e.target.dataset.k;
+    if (k) {
+      S.kind = k;
+      sync();
+    }
+  });
+}
+if (sel) {
+  sel.onchange = function () {
+    S.kind = sel.value;
+    sync();
+  };
+}
+var nm = document.getElementById("nm");
+var txt = document.getElementById("txt");
+if (nm) {
+  nm.oninput = function () {
+    S.text = this.value;
+    if (txt) txt.value = this.value;
+    sync();
+  };
+}
+if (txt) {
+  txt.value = S.text;
+  txt.oninput = function () {
+    S.text = this.value;
+    if (nm) nm.value = this.value;
+    sync();
+  };
+}
+var qty = document.getElementById("qty");
+if (qty) qty.oninput = sync;
 document.querySelectorAll("[data-p]").forEach(function (c) {
   c.onchange = sync;
 });
-document.getElementById("form").onsubmit = function (e) {
-  e.preventDefault();
-  document.getElementById("sum").textContent =
-    document.getElementById("qty").value +
-    " × " +
-    P[S.kind].n +
-    ' for "' +
-    (S.text || "no text") +
-    '", ' +
-    S.body +
-    " with " +
-    S.trim +
-    " trim, size " +
-    document.getElementById("size").value +
-    ". Estimated total $" +
-    price() +
-    ".";
-  this.style.display = "none";
-  var d = document.getElementById("done");
-  d.style.display = "block";
-  d.scrollIntoView({ block: "center" });
-};
+var form = document.getElementById("form");
+if (form) {
+  form.onsubmit = function (e) {
+    e.preventDefault();
+    var sum = document.getElementById("sum");
+    var size = document.getElementById("size");
+    if (sum) {
+      sum.textContent =
+        (qty ? qty.value : 1) +
+        " × " +
+        P[S.kind].n +
+        ' for "' +
+        (S.text || "no text") +
+        '", ' +
+        S.body +
+        " with " +
+        S.trim +
+        " trim, size " +
+        (size ? size.value : "M") +
+        ". Estimated total $" +
+        price() +
+        ".";
+    }
+    this.style.display = "none";
+    var d = document.getElementById("done");
+    if (d) {
+      d.style.display = "block";
+      d.scrollIntoView({ block: "center" });
+    }
+  };
+}
 sync();
 var PS = {
   type: "Embroidered",

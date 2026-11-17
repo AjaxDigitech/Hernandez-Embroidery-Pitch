@@ -317,16 +317,6 @@ h2 {
   font-size: 15px;
   text-align: center;
 }
-.order {
-  background: #fff;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.order .wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 44px;
-}
 .f {
   display: grid;
   gap: 16px;
@@ -552,8 +542,7 @@ footer .wrap {
   gap: 10px;
 }
 @media (max-width: 900px) {
-  .hero .wrap,
-  .order .wrap {
+  .hero .wrap {
     grid-template-columns: 1fr;
   }
   .grid {
